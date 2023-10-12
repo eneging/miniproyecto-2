@@ -6,7 +6,7 @@ function all () {
 
 global $mysqli;
 
-$response =$mysqli->query("SELECT * FROM users");
+$response =$mysqli->query("SELECT * FROM users1");
 $data = $response->fetch_all(MYSQLI_ASSOC);
 
 
@@ -19,7 +19,7 @@ function getByID($id)
 
 {
     global $mysqli;
-    $response = $mysqli->query("SELECT * FROM users WHERE Usuario_ID = $id ");
+    $response = $mysqli->query("SELECT * FROM users1 WHERE Usuario_ID = $id ");
 
     $data = $response ->fetch_assoc();
  

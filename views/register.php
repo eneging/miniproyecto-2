@@ -41,16 +41,16 @@
 
 
 
-<h1> Registrarun nuevo usuario</h1>
-<form action="../handle_db/create.php"  method="post"> 
+<h1> Registrar un nuevo usuario</h1>
+<form action="../handle_db/create.php"  method="post" style="display: flex; flex-direction:column; gap:0.4rem ; padding:1rem" > 
 
 
 <label>Email</label>
-<input name="Email" />
+<input name="Email" require  style="border: solid 1px grey; border-radius:5px; height:4vh; "/>
 
 
 <label>Pasword</label>
-<input name="Contrasena" />
+<input name="Contrasena"  style="border: solid 1px grey; border-radius:5px; height:4vh; "/>
 
 
 <button type="submit">Register</button>

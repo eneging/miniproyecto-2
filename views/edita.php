@@ -9,7 +9,16 @@ $data = getByID($id);
 extract($data);
 ?>
 
+<?php 
 
+session_start();
+if(!isset($_SESSION['users1'])){
+   header('Location: /index.php');
+    echo "no estas loggeafo";
+    die();
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -45,43 +54,50 @@ extract($data);
 <path d="M34.7099 11.7721L23.9679 17.4789C23.6186 17.6644 23.2249 17.7628 22.8312 17.7628C21.9306 17.7628 21.1093 17.2689 20.6877 16.4746C20.3837 15.9015 20.3201 15.2465 20.51 14.6263C20.6999 14.0062 21.1197 13.4984 21.6919 13.1944L32.4339 7.48765C32.7832 7.30126 33.176 7.20458 33.5706 7.20458C33.9094 7.20458 34.2378 7.27426 34.5374 7.40491L34.709 7.49636C35.1375 7.72282 35.4842 8.06948 35.7115 8.49801C35.7193 8.51107 35.7281 8.52414 35.7368 8.5372C36.329 9.7113 35.8752 11.1528 34.7099 11.7721ZM1.15735 10.7731C1.15212 10.7626 1.14428 10.7539 1.13732 10.7434C0.535459 9.56673 0.987505 8.11738 2.15812 7.49636L12.9001 1.78873C13.2494 1.60408 13.6422 1.50479 14.0368 1.50479C14.9365 1.50479 15.7579 1.99864 16.1803 2.79298C16.4834 3.36436 16.5461 4.02109 16.3562 4.64037C16.1664 5.26052 15.7474 5.77005 15.176 6.07316L4.43404 11.7808C4.08477 11.9663 3.69108 12.0639 3.29739 12.0639C2.95857 12.0639 2.6302 11.9933 2.33058 11.8644L2.15812 11.7721C1.73046 11.5456 1.38468 11.1998 1.15735 10.7731ZM36.4832 8.08255C36.1339 7.42669 35.5835 6.92151 34.9311 6.62624L26.8587 2.33833L24.73 1.20777L24.7221 1.20342L24.3764 1.02051C23.9252 0.780983 23.42 0.650333 22.9113 0.637268C22.9018 0.637268 22.8922 0.635534 22.8826 0.635534C22.8652 0.635534 22.8478 0.633789 22.8312 0.633789L22.8216 0.634657C21.7895 0.624205 20.7687 1.09454 20.1198 1.98731L13.1724 11.2338C13.0286 11.4254 13.0669 11.6989 13.2595 11.8435C13.4519 11.9881 13.7245 11.9489 13.8691 11.7564L20.8201 2.50382C21.6057 1.42204 23.1256 1.18164 24.2083 1.96728C24.9355 2.49685 25.3101 3.37829 25.1846 4.26932C25.1298 4.65953 24.9773 5.0358 24.7491 5.34936L17.3335 15.2265C17.323 14.9399 17.276 14.6525 17.1898 14.372C16.932 13.5298 16.3623 12.8382 15.5845 12.4245L9.67778 9.27494C9.46517 9.16171 9.20135 9.24271 9.08899 9.45524C8.97567 9.66689 9.05667 9.9308 9.26928 10.044L15.176 13.1944C15.7483 13.4984 16.1672 14.0062 16.3571 14.6263C16.547 15.2465 16.4843 15.9015 16.1803 16.4746C15.9216 16.9615 15.5122 17.3343 15.028 17.5511C14.9626 17.5712 14.8964 17.5895 14.8294 17.606C14.7693 17.6182 14.7153 17.6435 14.6691 17.6783C14.4662 17.7332 14.2536 17.7628 14.0368 17.7628C13.6422 17.7628 13.2494 17.6644 12.9001 17.4789L5.62643 13.6142L4.1379 12.8242C4.38178 12.7589 4.61869 12.6675 4.84253 12.5499L15.5845 6.84311C16.3615 6.42939 16.9311 5.73869 17.1889 4.89644C17.4467 4.05244 17.3614 3.16055 16.9494 2.38449C16.3754 1.30446 15.2596 0.633789 14.0368 0.633789C13.5002 0.633789 12.9663 0.767918 12.4916 1.02051L1.74963 6.72641C0.14438 7.57911 -0.46793 9.57892 0.384775 11.1842C0.734045 11.8409 1.28451 12.3452 1.93689 12.6413L2.08757 12.7215H2.08931L4.49588 14.0001L12.4916 18.2479C12.9663 18.5005 13.5002 18.6338 14.0368 18.6338C14.4975 18.6338 14.9435 18.538 15.3502 18.362C15.993 18.1434 16.5548 17.7332 16.9529 17.1853L25.4503 5.8676C25.7656 5.4321 25.972 4.92257 26.0469 4.39126C26.1236 3.84515 26.0617 3.30513 25.8823 2.80605L27.181 3.49501L32.7292 6.44333C32.4853 6.50779 32.2484 6.59924 32.0254 6.7177L27.1818 9.29061L23.7676 7.48853C23.5542 7.37704 23.2921 7.45979 23.1806 7.67318C23.0691 7.88657 23.151 8.14962 23.3644 8.2611L26.2499 9.78708L21.2826 12.4245C20.5057 12.8382 19.9352 13.5298 19.6773 14.372C19.4195 15.2125 19.5049 16.1053 19.9186 16.8831C20.4917 17.9623 21.6075 18.6338 22.8312 18.6338C23.3669 18.6338 23.9017 18.5005 24.3764 18.2479L35.1184 12.5412C36.7236 11.6876 37.3359 9.68954 36.4832 8.08255Z" fill="#F0402C"/>
 <path d="M27.181 3.49512L25.8823 2.80615L25.8814 2.80442C25.628 2.13724 25.2273 1.50837 24.73 1.20788L26.8587 2.33844C27.0207 2.706 27.1304 3.09359 27.181 3.49512Z" fill="#C73622"/>
 <path d="M4.49586 14L2.08929 12.7214C2.12753 12.7344 2.75169 12.9409 3.40145 12.9409C3.65404 12.9409 3.91046 12.9095 4.13788 12.8242L5.62641 13.6142C5.27017 13.7988 4.88868 13.9268 4.49586 14Z" fill="#C73622"/>
-</svg>  </div>    <div> bienvenido ,</div>     </nav>
+</svg>  </div>    
+
+
+<div style="display: flex; gap:1rem; height: 5vh  ">  <img src="<?= $Photo ?>" style="width: 40px; heigth: 40px ; filter:brightness(70%); border-radius:7px"> <h4>  <?= $_SESSION['users1']['Name']?></h4> </div>     </nav>
 
 
 <div class="container-all" >
-<main style="border:solid;  height: 90vh; width: 80vh; border:solid 1px ; border-radius:16px; padding:1rem;
+<main style=" height: 85vh; width: 40vw; border:solid 1px grey; border-radius:16px; padding:0.5rem;
 
 ">
 
     
-<h1>Editar</h1>
-<form style="display: flex; flex-direction:column; gap:0.7rem">
 
-<label>ID:</label>
-<input style="border: solid 1px; border-radius:5px; height:5vh" type="number" disabled value="<?= $id ?>"/>
+<form  action="../handle_db/update.php"  method="post" style="display: flex; flex-direction:column; gap:0.4rem ; padding:1rem"  >
 
+<h4>Change Info </h4>
+<p style="font-size:x-small;">Changes will be reflected to every services</p>
+<input  style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw"  value="<?= $id ?>"  name="id"   type="text" />
 
-<label >Email:</label>
-<input  style="border: solid 1px; border-radius:5px; height:5vh" type="text" value="<?= $Email ?>" />
+<img src="<?= $Photo ?>" style="width: 72px; heigth: 72px ; filter:brightness(70%); border-radius:7px"> 
 
-<label >Contrasena:</label>
-<input style="border: solid 1px; border-radius:5px; height:5vh" type="text" value="<?= $Contrasena?>" />
-
-<label >Photo:</label>
+<input  style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw"  value="<?= $Photo ?>"  name="photo"   type="text" />
 
 
-<input  style="border: solid 1px; border-radius:5px; height:5vh"  value="<?= $Photo ?>"  type="text" />
+<label style="font-size: small; font-weight:900">Name</label>
+<input style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw" type="text"  value="<?= $Name ?>" name="name"/>
 
-<label >Name:</label>
-<input style="border: solid 1px; border-radius:5px; height:5vh" type="text" value="<?= $Name ?>"/>
 
-<label >Bio:</label>
-<input style="border: solid 1px; border-radius:5px; height:5vh"type="text"  value="<?= $Bio ?>"/>
- 
-<label >Phone:</label>
-<input  style="border: solid 1px; border-radius:5px; height:5vh" type="text" value="<?= $Phone ?>"/>
+<label style="font-size: small; font-weight:900" >Bio:</label>
+<input style="border: solid 1px grey; border-radius:5px; height:10vh; width: 18vw"type="text"  value="<?= $Bio ?>" name= "bio"/>
 
-<button>Guardar</button>
+<label style="font-size: small; font-weight:900" >Phone:</label>
+<input  style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw" type="text" value="<?= $Phone ?>" name="phone"/>
+
+
+<label  style="font-size: small; font-weight:900">Email:</label>
+<input  style="border: solid 1px grey; border-radius:5px; height:4vh;width: 18vw" type="text" value="<?= $Email ?>" name="emails"/>
+
+<label  style="font-size: small; font-weight:900">Contrasena:</label>
+<input style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw" type="text" require  name="Contrasena"/>
+
+
+<button type="submit" style="width:5vw; height: 4vh ; background: rgb(38, 129, 242); color:white ; border-radius:4px">Save</button>
+
 </form>
 </main>
 </div>
