@@ -51,16 +51,16 @@ if (!isset($_SESSION['users1'])) {
             </svg>
 
         </div>
-        <div style="display: flex; gap:1rem; height: 5vh  ">
+        <div style="display: flex; gap:1rem; height: 5vh  "  >
 
             <img src="<?= $_SESSION['users1']['Photo']?>" style="width: 40px; heigth: 40px ; filter:brightness(70%); border-radius:7px" />
-            <h4>       <?= $_SESSION['users1']['Name'] ?></h4><a href="/handle_db/logout.php">logout</a>
+            <h4>       <?= $_SESSION['users1']['Name'] ?></h4>       <a href="/handle_db/logout.php">logout</a>
        
         </div>
     </nav>
 
 
-    <div class="container-all">
+    <div class="container-all" id="container-all" >
         <main>
 
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION['users1'])) {
                     <p>Basic info, like your name and phote </p>
                 </center>
             </div>
-            <div class="container-p-imformation">
+            <div class="container-p-imformation" id="container-p-imformation">
 
                 <?php
 
@@ -88,7 +88,7 @@ if (!isset($_SESSION['users1'])) {
 
                 <div class="container-profile">
 
-                    <div class="container-inf" style="border-top-left-radius:10px ; border:solid 1px grey ; border-top-right-radius:10px">
+                    <div class="container-inf"   id="container-inf" style="border-top-left-radius:10px ; border:solid 1px grey ; border-top-right-radius:10px">
                         <div>
                             <h4>Profile</h4>
                             <p> Some info may be visible to other people
@@ -98,7 +98,7 @@ if (!isset($_SESSION['users1'])) {
                     </div>
 
 
-                    <div class="container-inf">
+                    <div class="container-inf"  id="container-inf">
                         <p>Photo</p>
                         <div class="container-infomacion"> <img src="<?= $Photo ?>" style="width:40px; border-radius:5px">
                        

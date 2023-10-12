@@ -73,6 +73,8 @@ if(!isset($_SESSION['users1'])){
 <p style="font-size:x-small;">Changes will be reflected to every services</p>
 <input  style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw"  value="<?= $id ?>"  name="id"   type="text" />
 
+
+
 <img src="<?= $Photo ?>" style="width: 72px; heigth: 72px ; filter:brightness(70%); border-radius:7px"> 
 
 <input  style="border: solid 1px grey; border-radius:5px; height:4vh; width: 18vw"  value="<?= $Photo ?>"  name="photo"   type="text" />

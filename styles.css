@@ -147,12 +147,7 @@ height: 5vh;
 }
 
 
-.container-profile{
 
-
-
-
-}
 
 
 .container-inf {
@@ -185,6 +180,12 @@ width: 25vw;
  height: 5vh;
 
 }
+
+
+
+
+
+
 
 
 @media (max-width: 768px){
@@ -238,6 +239,26 @@ height: 80vh;
 height: 7vh;
 
 }
+
+
+#container-all{
+
+
+justify-content: center;
+
+}
+
+
+#container-p-imformation{
+    padding-top: 2rem;
+ 
+    width: 95vw;
+}
+#container-inf{
+    border-bottom: 1rem red;
+    border: none;
+}
+
 
 }
 

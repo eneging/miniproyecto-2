@@ -33,10 +33,7 @@
 
              <!-- Pills content -->
              <div class="tab-content">
-                 <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-
-
-
+                 <div >
 
                      <form class="form-1" action="./handle_db/login.php" method="post">
 

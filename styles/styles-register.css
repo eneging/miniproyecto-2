@@ -1,0 +1,42 @@
+nav{
+    display: flex;
+
+
+}
+
+.container-register-all{
+
+
+
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+
+}
+
+h4{
+    size: 10px;
+}
+
+
+form{
+    height: 55vh;
+    display: flex; flex-direction:column; gap:0.7rem ; padding:1rem
+}
+
+form > h1{
+
+    font-size: 15px;
+}
+
+form > p {
+
+    font-size: 12px;
+}
+
+
+
+
+
