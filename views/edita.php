@@ -17,7 +17,7 @@ extract($data);
 
 session_start();
 if (!isset($_SESSION['users1'])) {
-    header('Location: /views/index.php');
+    header('Location: /index.php');
     echo "no estas loggeafo";
     die();
 }
@@ -31,16 +31,42 @@ if (!isset($_SESSION['users1'])) {
 <head>
 
 <script>
-function toggleDarkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
+
 
 function toggleModal() {
     var element = document.body;
     element.classList.toggle("Modal");
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            const themeStyle = document.getElementById("theme-style");
+            const currentTheme = localStorage.getItem("theme");
+
+            if (currentTheme) {
+                themeStyle.href = currentTheme; // Aplica el tema almacenado en localStorage
+            }
+
+            themeToggle.addEventListener("click", function () {
+                if (themeStyle.getAttribute("href") === "light-theme.css") {
+                    themeStyle.href = "dark-theme.css";
+                    localStorage.setItem("theme", "dark-theme.css"); // Guarda el tema en localStorage
+                } else {
+                    themeStyle.href = "light-theme.css";
+                    localStorage.setItem("theme", "light-theme.css");
+                }
+            });
+        });
+
+
+
 </script>
+
+
+
+<link id="theme-style" rel="stylesheet" href="/styles/light-theme.css">
+
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" type="text/css" href="../styles/style-edita.css">
 
@@ -84,9 +110,37 @@ function toggleModal() {
         <div class="ctn-seccion-elements"> <img src="<?= $Photo ?>" id="miImagen1" style="width: 40px; heigth: 40px ; filter:brightness(70%); border-radius:7px">
             <h4 id="name3"> <?= $Name ?></h4>
 
-            <button class="btn-logout">
-                <p> <a style="color:grey;text-decoration:none" href="/handle_db/logout.php">logout</a></p>
+           
+
+
+            <button style="background-color: white;" onclick=" toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
+arrow_drop_down
+</span>
+<button id="theme-toggle" style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:5vw">Theme</button>          
     </nav>
+
+  
+    <div class="modals">  
+    
+    <div><span class="material-symbols-outlined">
+    account_circle
+    </span>  <p> <a style="text-decoration-line:none" href="./dashboard.php">My Profile</a></p></div>
+    
+    <div><span class="material-symbols-outlined">
+    group
+    </span><p>Group Chat</p></div>
+    
+    <div><span class="material-symbols-outlined">
+    logout
+    </span> <a  style="color:grey;text-decoration:none"  href="/handle_db/logout.php"> <p> Logout</p></a>
+        
+    </div>
+        
+        </div></div>
+
+
+
+
 
     <a href="/handle_db/delete.php"></a>
     <div class="back"><a href="/views/dashboard.php"><span class="material-symbols-outlined">
@@ -148,9 +202,7 @@ function toggleModal() {
             <form method="post" action="/handle_db/delete.php">
 
 
-              <input type="text" name="id" value="3" disabled   style="display: none;">
-              <button type="submit" style="width:5vw; height: 4vh ; background: red; color:white ; border-radius:4px">Delete</button>
-
+             
 
             </form>
 

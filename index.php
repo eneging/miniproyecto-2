@@ -4,8 +4,41 @@
  <html lang="en">
 
  <head>
-     <meta charset="UTF-8">
 
+ <script>
+
+function toggleModal() {
+    var element = document.body;
+    element.classList.toggle("Modal");
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            const themeStyle = document.getElementById("theme-style");
+            const currentTheme = localStorage.getItem("theme");
+
+            if (currentTheme) {
+                themeStyle.href = currentTheme; // Aplica el tema almacenado en localStorage
+            }
+
+            themeToggle.addEventListener("click", function () {
+                if (themeStyle.getAttribute("href") === "light-theme.css") {
+                    themeStyle.href = "dark-theme.css";
+                    localStorage.setItem("theme", "dark-theme.css"); // Guarda el tema en localStorage
+                } else {
+                    themeStyle.href = "light-theme.css";
+                    localStorage.setItem("theme", "light-theme.css");
+                }
+            });
+        });
+
+
+
+</script>
+
+     <meta charset="UTF-8">
+     <link id="theme-style" rel="stylesheet" href="./views/light-theme.css">
      <link rel="stylesheet" type="text/css" href="/styles.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -17,10 +50,10 @@
  </head>
 
  <body>
-
+ <button id="theme-toggle">Cambiar Tema</button>  
      <div class="container-all">
 
-     
+    
 
          <div class="container-login">
 

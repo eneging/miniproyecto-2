@@ -27,7 +27,7 @@ $usuario = getByID($_SESSION['users1']['Usuario_ID']);
 
 <head>
 <script src="/styles/tu_script.js"></script>
-
+<link id="theme-style" rel="stylesheet" href="/styles/light-theme.css">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -42,16 +42,41 @@ $usuario = getByID($_SESSION['users1']['Usuario_ID']);
 <body>
 
 <script>
-function toggleDarkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
 
 function toggleModal() {
     var element = document.body;
     element.classList.toggle("Modal");
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    
+            const themeToggle = document.getElementById("theme-toggle");
+            const themeStyle = document.getElementById("theme-style");
+            const currentTheme = localStorage.getItem("theme");
+
+            if (currentTheme) {
+                themeStyle.href = currentTheme; // Aplica el tema almacenado en localStorage
+            }
+
+            themeToggle.addEventListener("click", function () {
+                if (themeStyle.getAttribute("href") === "light-theme.css") {
+                    themeStyle.href = "dark-theme.css";
+                    localStorage.setItem("theme", "dark-theme.css"); // Guarda el tema en localStorage
+                } else {
+                    themeStyle.href = "light-theme.css";
+                    localStorage.setItem("theme", "light-theme.css");
+                }
+            });
+        });
+
+
+
 </script>
+
+
 
     <nav style="display: flex;">
         <div> <svg width="131" height="19" viewBox="0 0 131 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,18 +105,18 @@ function toggleModal() {
            <img src="<?= $Photo?>"  id="miImagen1" style=" width:100%; height:100%;filter:brightness(70%); border-radius:7px; object-fit: cover;" /></div>
             <h4 id="name1">       <?= $Name ?></h4>  
      
-   <button onclick="toggleDarkMode(), toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
+   <button style="background-color: white;" onclick=" toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
 arrow_drop_down
 </span></button>
 
-
+<button id="theme-toggle" style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:5vw">Theme</button>
        
     </nav>
 <div class="modals">  
     
 <div><span class="material-symbols-outlined">
 account_circle
-</span>  <p>My Profile</p></div>
+</span> <p> <a style="text-decoration-line:none" href="./dashboard.php">My Profile</a></p></div>
 
 <div><span class="material-symbols-outlined">
 group
@@ -136,7 +161,7 @@ logout
 
 
                     <div class="container-inf"  id="container-inf">
-                        <p>Photo</p>
+                        <p >Photo</p>
                         <div class="container-infomacion" > 
                         
                         
