@@ -18,8 +18,6 @@
 
  <body>
 
-
-
      <div class="container-all">
 
      
@@ -27,9 +25,6 @@
          <div class="container-login">
 
              <!-- Pills navs -->
-
-
-
 
              <!-- Pills content -->
              <div class="tab-content">
@@ -58,10 +53,6 @@
 </svg>  </div>
                          
 
-<div class="first-title">
-<h3>Join thousands of learners from around the world </h3>    
-<p>Master web development by making real-life projects. There are multiple paths for you to choose</p>
-</div>
 
 
 
@@ -84,7 +75,7 @@
 
 
                          <!-- Submit button -->
-                         <button type="submit" class="button-blue"> <p class="login-1">Login</p> <p class="login-2">Start coding now </p>  </button> 
+                         <button type="submit" class="button-blue"> <p class="login-1">Login</p>   </button> 
 
                        <div style="display: flex ; justify-content:center">  <p style="font-size: 10px;">or continue with theses social profile</p></div>
 
@@ -145,7 +136,7 @@
 
                          <!-- Register buttons -->
                          <div style="display: flex ; justify-content:center;">
-                             <p style="font-size: 10px;" >Don't have an account yet? <a href="./views/register.php">Register</a></p>
+                             <p style="font-size: 10px;" >Don't have an account yet? <a href = "./views/register.php">Register</a></p>
                          </div>
                      </form>
                  </div>
@@ -153,3 +144,7 @@
  </body>
 
  </html>
+
+
+
+ 

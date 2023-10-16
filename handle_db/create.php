@@ -11,11 +11,17 @@ $hash = password_hash($Contrasena, PASSWORD_DEFAULT);
 
  $response = $mysqli->query("INSERT INTO users1 (Email, Contrasena) VALUES ('$Email','$hash')");
 
-  header("Location: /views/dashboard.php");
+ 
 
 
-echo "estas ingresando";}
- else {
+header("Location: /index.php");
+
+
+}
+
+
+
+else {
 
 echo "no esta ingresando";
 

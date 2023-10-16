@@ -9,11 +9,24 @@ if (!isset($_SESSION['users1'])) {
 
 ?>
 
+<?php
+
+
+require_once("../models/usuarios.php");
+$usuario = getByID($_SESSION['users1']['Usuario_ID']);
+
+ extract($usuario);
+  
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<script src="/styles/tu_script.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +41,17 @@ if (!isset($_SESSION['users1'])) {
 
 <body>
 
+<script>
+function toggleDarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
 
+function toggleModal() {
+    var element = document.body;
+    element.classList.toggle("Modal");
+}
+</script>
 
     <nav style="display: flex;">
         <div> <svg width="131" height="19" viewBox="0 0 131 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,16 +74,42 @@ if (!isset($_SESSION['users1'])) {
             </svg>
 
         </div>
-        <div style="display: flex; gap:1rem; height: 5vh  "  >
+        <div style="display: flex; gap:1rem; height: 6vh ;align-items: center; "  >
 
-            <img src="<?= $_SESSION['users1']['Photo']?>" style="width: 40px; heigth: 40px ; filter:brightness(70%); border-radius:7px" />
-            <h4>       <?= $_SESSION['users1']['Name'] ?></h4>       <a href="/handle_db/logout.php">logout</a>
+           <div style="width: 50px; height: 50px"> 
+           <img src="<?= $Photo?>"  id="miImagen1" style=" width:100%; height:100%;filter:brightness(70%); border-radius:7px; object-fit: cover;" /></div>
+            <h4 id="name1">       <?= $Name ?></h4>  
+     
+   <button onclick="toggleDarkMode(), toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
+arrow_drop_down
+</span></button>
+
+
        
-        </div>
     </nav>
+<div class="modals">  
+    
+<div><span class="material-symbols-outlined">
+account_circle
+</span>  <p>My Profile</p></div>
+
+<div><span class="material-symbols-outlined">
+group
+</span><p>Group Chat</p></div>
+
+<div><span class="material-symbols-outlined">
+logout
+</span> <a  style="color:grey;text-decoration:none"  href="/handle_db/logout.php"> <p> Logout</p></a>
+    
+</div>
+    
+    </div></div>
 
 
-    <div class="container-all" id="container-all" >
+
+
+
+       <div class="container-all" id="container-all" >
         <main>
 
 
@@ -73,22 +122,10 @@ if (!isset($_SESSION['users1'])) {
             </div>
             <div class="container-p-imformation" id="container-p-imformation">
 
-                <?php
-
-
-                  require_once("../models/usuarios.php");
-                  $usuario = getByID($_SESSION['users1']['Usuario_ID']);
-
-                   extract($usuario);
-
-               
-              
-                ?>
-
 
                 <div class="container-profile">
 
-                    <div class="container-inf"   id="container-inf" style="border-top-left-radius:10px ; border:solid 1px grey ; border-top-right-radius:10px">
+                    <div class="container-inf"   id="container-inf" style="border-top-left-radius:10px ; border:solid 1px E0E0E0 ; border-top-right-radius:10px">
                         <div>
                             <h4>Profile</h4>
                             <p> Some info may be visible to other people
@@ -100,32 +137,38 @@ if (!isset($_SESSION['users1'])) {
 
                     <div class="container-inf"  id="container-inf">
                         <p>Photo</p>
-                        <div class="container-infomacion"> <img src="<?= $Photo ?>" style="width:40px; border-radius:5px">
+                        <div class="container-infomacion" > 
+                        
+                        
+                        <div style="width: 50px; height: 50px; "><img src='<?=$Photo?>' id="miImagen" style="width:40px; border-radius:5 ;pxobject-fit: cover;width:100%; height:100%;"></div>
                        
+                        
+          
+                        
                     </div>
                     </div>
                     <div class="container-inf">
-                        <p>Name</p>
+                        <p  >Name</p>
                         <div class="container-infomacion">
-                            <h4> <?= $Name ?></h4>
+                            <h4 id="name"> <?= $Name ?></h4>
                         </div>
                     </div>
                     <div class="container-inf">
-                        <p>Bio</p>
+                        <p  >Bio</p>
                         <div class="container-infomacion">
-                            <p class="overflow-ellipsis"><?= $Bio ?></p>
+                            <p class="overflow-ellipsis" id= "bio"><?= $Bio ?></p>
                         </div>
                     </div>
 
-                    <div class="container-inf">
-                        <p>Phone</p>
-                        <div class="container-infomacion"> <?= $Phone ?></div>
+                    <div class="container-inf" >
+                        <p >Phone</p>
+                        <div class="container-infomacion" > <?= $Phone?></div>
                     </div>
                     <div class="container-inf">
                         <p>Email</p>
                         <div class="container-infomacion"><?= $Email ?></div>
                     </div>
-                    <div class="container-inf" style="border-bottom-left-radius:10px ; border:solid 1px grey ; border-bottom-right-radius:10px">
+                    <div class="container-inf" style="border-bottom-left-radius:10px ; border:solid 1px  #E0E0E0 ; border-bottom-right-radius:10px">
                         <p>Contrasena</p>
                         <div class="container-infomacion"> ***********</div>
                     </div>
@@ -134,3 +177,5 @@ if (!isset($_SESSION['users1'])) {
 
 
                     <br>
+
+    

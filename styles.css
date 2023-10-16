@@ -9,13 +9,106 @@ font-family: 'Noto Sans', sans-serif;
 }
 
 
-nav{
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Estilos para el tema oscuro 
+.dark-mode   {
+    background-color: #000;
+    color: #fff;
+}*/
+
+.modals{display: flex;
+    border:solid 0.5px rgb(173, 173, 173);
+    justify-content: center;
+     height: 0%;    flex-direction: column;
+    width: 14vw;
+    border-radius: 1rem;
+    position: absolute;
+    left: 83vw;
+   
+background-color: white;
+  
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+}
+
+.modals > div {
+    display: none;
+     
+}
+
+
+
+
+.Modal .modals{
+
+
+height: 25vh;
+}
+
+.Modal .modals > div{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 33%;
+    border-radius: 7px;
+    flex-direction: row;
+    gap: 1rem;
+
+   
+}
+
+.Modal .modals > div > span{
+
+color: #4F4F4F;
+
+}
+
+.Modal .modals > div > p{
+
+    font-weight: 800;
+}
+
+.Modal .modals > div:nth-child(3) > span{
+
+    color:  #EB5757;
+    
+    
+    }
+
+    .Modal .modals > div:nth-child(3) > a > p {
+        font-weight: 800;
+        color:  #EB5757;
+        
+        
+        }
+    
+
+.Modal .modals > div:nth-child(2) {
+   
+   
+    border-bottom: solid 0.5px grey;
+    border-radius: 0%;
+    
+}
+
+.Modal .modals > div:hover{
+border-radius: 10px;
+    background-color: #E0E0E0;
+}
+
+nav{ 
     padding: 2rem;
 
 display: flex;
 justify-content: space-between;
 height: 3vh;
-
+align-items: center;
 
 }
 
@@ -152,14 +245,15 @@ height: 5vh;
 
 .container-inf {
        
-    border: solid 1px gray;
+    border: solid 1px  #E0E0E0;
+    ;
     height: 5vh;
     display: flex;
     gap: 3rem;
     padding: 1rem;
    justify-content:space-between
-
-
+;align-content: center
+; align-items: center;
 
 }
 
@@ -177,16 +271,52 @@ height: 5vh;
 .container-infomacion{
 width: 25vw;
 
- height: 5vh;
-
+display: flex;
+ height: 7vh;
+align-items: center;
 }
 
 
+.back{
+ color:#2D9CDB;
 
+    display: flex;
+    padding-left: 28vw;
+    align-items: center;
+   text-align: center;
+   font-size: 10px;
+}
 
+.material-symbols-outlined {
+font-size: small;
+    color:#2D9CDB;
+}
 
+.foto{
+    gap: 2vw;
+align-items: center;
+    display: flex;
+}
 
+.btn-logout{
+    border:solid grey 1px ; 
+    border-radius: 15px ;
+     background: white; 
+     height:5vh; 
+     width:5vw
+    
 
+}
+
+.btn-logout > a > p:hover { 
+color:red
+
+}
+
+input{
+
+    outline: none;
+}
 
 @media (max-width: 768px){
 
@@ -209,24 +339,6 @@ width: 80vw;
 height: 80vh;
 }
 
-.login-title{
-    display: none;
-}
-
-.first-title{
-
-    display: block;
-}
-
-.login-1{
-    display: none;
-
-
-}
-
-.login-2{
-    display: block;
-}
 
 
 .input-logs{
@@ -257,6 +369,14 @@ justify-content: center;
 #container-inf{
     border-bottom: 1rem red;
     border: none;
+}
+
+#container-edit{
+
+border: solid;
+justify-content: center;
+
+
 }
 
 
