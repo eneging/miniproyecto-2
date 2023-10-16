@@ -1,0 +1,23 @@
+div{
+    background-color: rgb(37, 35, 41);
+    color: white;
+}
+
+nav{
+    background-color: rgb(37, 35, 41);
+    color: white;
+}
+
+
+
+.Modal .modals >  button{
+
+    background-color: rgb(37, 35, 41);
+
+}
+
+
+.Modal .modals > div > p{
+
+    color: rgb(37, 35, 41);
+}

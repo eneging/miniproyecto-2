@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
            <div style="width: 50px; height: 50px"> 
            <img src="<?= $Photo?>"  id="miImagen1" style=" width:100%; height:100%;filter:brightness(70%); border-radius:7px; object-fit: cover;" /></div>
-            <h4 id="name1">       <?= $Name ?></h4>  
+            <h4 id="name1">  <?= $Name ?></h4>  
      
    <button style="background-color: white;" onclick=" toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
 arrow_drop_down
