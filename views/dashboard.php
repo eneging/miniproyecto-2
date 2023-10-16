@@ -15,8 +15,8 @@ if (!isset($_SESSION['users1'])) {
 require_once("../models/usuarios.php");
 $usuario = getByID($_SESSION['users1']['Usuario_ID']);
 
- extract($usuario);
-  
+extract($usuario);
+
 
 
 ?>
@@ -26,8 +26,8 @@ $usuario = getByID($_SESSION['users1']['Usuario_ID']);
 <html lang="en">
 
 <head>
-<script src="/styles/tu_script.js"></script>
-<link id="theme-style" rel="stylesheet" href="/styles/light-theme.css">
+    <script src="/styles/tu_script.js"></script>
+    <link id="theme-style" rel="stylesheet" href="/styles/light-theme.css">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -41,18 +41,17 @@ $usuario = getByID($_SESSION['users1']['Usuario_ID']);
 
 <body>
 
-<script>
-
-function toggleModal() {
-    var element = document.body;
-    element.classList.toggle("Modal");
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        function toggleModal() {
+            var element = document.body;
+            element.classList.toggle("Modal");
+        }
 
 
-    
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+
             const themeToggle = document.getElementById("theme-toggle");
             const themeStyle = document.getElementById("theme-style");
             const currentTheme = localStorage.getItem("theme");
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 themeStyle.href = currentTheme; // Aplica el tema almacenado en localStorage
             }
 
-            themeToggle.addEventListener("click", function () {
+            themeToggle.addEventListener("click", function() {
                 if (themeStyle.getAttribute("href") === "light-theme.css") {
                     themeStyle.href = "dark-theme.css";
                     localStorage.setItem("theme", "dark-theme.css"); // Guarda el tema en localStorage
@@ -71,15 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         });
-
-
-
-</script>
+    </script>
 
 
 
     <nav style="display: flex;">
-        <div> <svg width="131" height="19" viewBox="0 0 131 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="logo"> <svg width="131" height="19" viewBox="0 0 131 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M41.6572 7.67183C41.3321 8.0211 41.1697 8.50014 41.1697 9.10897C41.1697 9.71867 41.3321 10.196 41.6572 10.5409C41.9821 10.8867 42.4127 11.0591 42.9489 11.0591C43.4687 11.0591 43.8973 10.8823 44.2345 10.5287C44.5715 10.1759 44.7403 9.70212 44.7403 9.10897C44.7403 8.50798 44.5715 8.03068 44.2345 7.67706C43.8973 7.32431 43.4687 7.14749 42.9489 7.14749C42.4127 7.14749 41.9821 7.32256 41.6572 7.67183ZM43.8689 6.05091C44.2711 6.3183 44.5614 6.68064 44.7403 7.1353V3.46753H46.4463V12.485H44.7403V11.0713C44.5614 11.526 44.2711 11.8901 43.8689 12.1618C43.4668 12.4344 42.9813 12.5703 42.4127 12.5703C41.844 12.5703 41.3321 12.4318 40.8773 12.1557C40.4222 11.8796 40.0669 11.4798 39.811 10.9555C39.555 10.4311 39.4272 9.81622 39.4272 9.10897C39.4272 8.40259 39.555 7.78767 39.811 7.26334C40.0669 6.739 40.4222 6.3392 40.8773 6.0631C41.3321 5.78699 41.844 5.64851 42.4127 5.64851C42.9813 5.64851 43.4668 5.78264 43.8689 6.05091Z" fill="#282051" />
                 <path d="M52.1918 7.42795C51.879 7.14313 51.495 7.00116 51.0403 7.00116C50.5771 7.00116 50.1872 7.14313 49.8704 7.42795C49.5536 7.71189 49.3787 8.13085 49.3464 8.68306H52.6245C52.6489 8.13085 52.5044 7.71189 52.1918 7.42795ZM54.2938 9.43821H49.3464C49.3708 10.0401 49.5333 10.4825 49.8338 10.7665C50.1343 11.0513 50.5081 11.1933 50.9549 11.1933C51.3528 11.1933 51.684 11.0957 51.948 10.9006C52.212 10.7055 52.3806 10.4416 52.4539 10.1089H54.2696C54.18 10.5801 53.9893 11.0025 53.6968 11.3762C53.4044 11.7498 53.0284 12.0425 52.5696 12.2533C52.1105 12.4649 51.6007 12.5703 51.0403 12.5703C50.3822 12.5703 49.7973 12.4301 49.2855 12.1496C48.7737 11.8692 48.3755 11.4694 48.0913 10.9494C47.8068 10.4294 47.6648 9.81622 47.6648 9.10897C47.6648 8.40259 47.8068 7.78767 48.0913 7.26334C48.3755 6.739 48.7737 6.3392 49.2855 6.0631C49.7973 5.78699 50.3822 5.64851 51.0403 5.64851C51.7064 5.64851 52.2893 5.78699 52.7888 6.0631C53.2886 6.3392 53.6744 6.71896 53.9464 7.20237C54.2188 7.68577 54.3549 8.23623 54.3549 8.85377C54.3549 9.02449 54.3345 9.21871 54.2938 9.43821Z" fill="#282051" />
                 <path d="M58.5101 10.7669L60.2161 5.73426H62.044L59.5458 12.4854H57.4499L54.9517 5.73426H56.7918L58.5101 10.7669Z" fill="#282051" />
@@ -99,42 +95,50 @@ document.addEventListener("DOMContentLoaded", function () {
             </svg>
 
         </div>
-        <div style="display: flex; gap:1rem; height: 6vh ;align-items: center; "  >
+        <div style="display: flex; gap:1rem; height: 6vh ;align-items: center; ">
 
-           <div style="width: 50px; height: 50px"> 
-           <img src="<?= $Photo?>"  id="miImagen1" style=" width:100%; height:100%;filter:brightness(70%); border-radius:7px; object-fit: cover;" /></div>
-            <h4 id="name1">  <?= $Name ?></h4>  
-     
-   <button style="background-color: white;" onclick=" toggleModal()" ><span style="color: #4F4F4F" class="material-symbols-outlined">
-arrow_drop_down
-</span></button>
+            <div style="width: 50px; height: 50px">
+                <img src="<?= $Photo ?>" id="miImagen1" style=" width:100%; height:100%;filter:brightness(70%); border-radius:7px; object-fit: cover;" />
+            </div>
+            <h4 id="name1"> <?= $Name ?></h4>
 
-<button id="theme-toggle" style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:5vw">Theme</button>
-       
+            <button style="background-color: white;" onclick=" toggleModal()"><span style="color: #4F4F4F" class="material-symbols-outlined">
+                    arrow_drop_down
+                </span></button>
+
+            <button id="theme-toggle" class="theme">Theme</button>
+
     </nav>
-<div class="modals">  
-    
-<div><span class="material-symbols-outlined">
-account_circle
-</span> <p> <a style="text-decoration-line:none" href="./dashboard.php">My Profile</a></p></div>
+    <div class="modals">
 
-<div><span class="material-symbols-outlined">
-group
-</span><p>Group Chat</p></div>
+        <div><span class="material-symbols-outlined">
+                account_circle
+            </span>
+            <p> <a style="text-decoration-line:none" href="./dashboard.php">My Profile</a></p>
+        </div>
 
-<div><span class="material-symbols-outlined">
-logout
-</span> <a  style="color:grey;text-decoration:none"  href="/handle_db/logout.php"> <p> Logout</p></a>
-    
-</div>
-    
-    </div></div>
+        <div><span class="material-symbols-outlined">
+                group
+            </span>
+            <p>Group Chat</p>
+        </div>
+
+        <div><span class="material-symbols-outlined">
+                logout
+            </span> <a style="color:grey;text-decoration:none" href="/handle_db/logout.php">
+                <p> Logout</p>
+            </a>
+
+        </div>
+
+    </div>
+    </div>
 
 
 
 
 
-       <div class="container-all" id="container-all" >
+    <div class="container-all" id="container-all">
         <main>
 
 
@@ -150,44 +154,44 @@ logout
 
                 <div class="container-profile">
 
-                    <div class="container-inf"   id="container-inf" style="border-top-left-radius:10px ; border:solid 1px E0E0E0 ; border-top-right-radius:10px">
+                    <div class="container-inf" id="container-inf" style="border-top-left-radius:10px ; border:solid 1px E0E0E0 ; border-top-right-radius:10px">
                         <div>
                             <h4>Profile</h4>
                             <p> Some info may be visible to other people
                             </p>
                         </div>
-                        <div> <button style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:5vw"><a  href="../views/edita.php?id=<?= $Usuario_ID ?>" style="color:grey;text-decoration:none; "> Edit</a></button></div>
+                        <div> <button style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:6vw"><a href="../views/edita.php?id=<?= $Usuario_ID ?>" style="color:grey;text-decoration:none; "> Edit</a></button></div>
                     </div>
 
 
-                    <div class="container-inf"  id="container-inf">
-                        <p >Photo</p>
-                        <div class="container-infomacion" > 
-                        
-                        
-                        <div style="width: 50px; height: 50px; "><img src='<?=$Photo?>' id="miImagen" style="width:40px; border-radius:5 ;pxobject-fit: cover;width:100%; height:100%;"></div>
-                       
-                        
-          
-                        
-                    </div>
+                    <div class="container-inf" id="container-inf">
+                        <p>Photo</p>
+                        <div class="container-infomacion">
+
+
+                            <div style="width: 50px; height: 50px; "><img src='<?= $Photo ?>' id="miImagen" style="width:40px; border-radius:5 ;pxobject-fit: cover;width:100%; height:100%;"></div>
+
+
+
+
+                        </div>
                     </div>
                     <div class="container-inf">
-                        <p  >Name</p>
+                        <p>Name</p>
                         <div class="container-infomacion">
                             <h4 id="name"> <?= $Name ?></h4>
                         </div>
                     </div>
                     <div class="container-inf">
-                        <p  >Bio</p>
+                        <p>Bio</p>
                         <div class="container-infomacion">
-                            <p class="overflow-ellipsis" id= "bio"><?= $Bio ?></p>
+                            <p class="overflow-ellipsis" id="bio"><?= $Bio ?></p>
                         </div>
                     </div>
 
-                    <div class="container-inf" >
-                        <p >Phone</p>
-                        <div class="container-infomacion" > <?= $Phone?></div>
+                    <div class="container-inf">
+                        <p>Phone</p>
+                        <div class="container-infomacion"> <?= $Phone ?></div>
                     </div>
                     <div class="container-inf">
                         <p>Email</p>
@@ -202,5 +206,3 @@ logout
 
 
                     <br>
-
-    

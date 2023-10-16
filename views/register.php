@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <body>
 
 
-
+<div style="display: flex; justify-content:end"><button id="theme-toggle" style=" border:solid grey 1px ; border-radius: 15px ; background: white; height:5vh; width:5vw">
+Theme</button></div>
 
     <div class="container-register-all">
 

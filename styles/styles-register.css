@@ -36,6 +36,24 @@ form > p {
 }
 
 
+main{
+display: flex;
+ 
+    justify-content: center;
+}
 
 
+@media (max-width: 768px){
+    form{
 
+        height: 80vh;
+    }
+    .container-register-all{
+
+        
+        justify-content: center;
+        align-items:center;
+       
+    }
+
+}
