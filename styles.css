@@ -13,16 +13,7 @@ button{
     cursor: pointer;
 }
 
-body {
-    background-color: #fff;
-    color: #000;
-}
 
-/* Estilos para el tema oscuro 
-.dark-mode   {
-    background-color: #000;
-    color: #fff;
-}*/
 
 .modals{display: flex;
     border:solid 0.5px rgb(173, 173, 173);
@@ -281,26 +272,14 @@ align-items: center;
 }
 
 
-.back{
- color:#2D9CDB;
 
-    display: flex;
-    padding-left: 28vw;
-    align-items: center;
-   text-align: center;
-   font-size: 10px;
-}
 
 .material-symbols-outlined {
 font-size: small;
     color:#2D9CDB;
 }
 
-.foto{
-    gap: 2vw;
-align-items: center;
-    display: flex;
-}
+
 
 .btn-logout{
     border:solid grey 1px ; 
@@ -320,6 +299,17 @@ color:red
 input{
 
     outline: none;
+}
+
+
+.theme{
+
+
+     border:solid grey 1px ; 
+     border-radius: 15px ; 
+     background: white; 
+     height:5vh; 
+     width:20%
 }
 
 @media (max-width: 768px){
@@ -360,6 +350,7 @@ height: 7vh;
 #container-all{
 
 
+padding-top: 2rem;
 justify-content: center;
 
 }
@@ -375,17 +366,28 @@ justify-content: center;
     border: none;
 }
 
-#container-edit{
 
-border: solid;
-justify-content: center;
 
+
+.modals{
+
+width: 35vw;
+left: 60vw
 
 }
 
+.theme{
+
+  
+}
 
 }
 
+@media (max-width: 450px){
 
+
+    .logo{display: none;}
+    
+    }
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 09:13:41
+-- Tiempo de generación: 16-10-2023 a las 17:46:22
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -44,9 +44,7 @@ CREATE TABLE `users1` (
 INSERT INTO `users1` (`Usuario_ID`, `Email`, `Contrasena`, `Photo`, `Name`, `Bio`, `Phone`) VALUES
 (1, 'test@test', '$2y$10$y3dmJIG0DzzuijLU1f3UNODddXzCYqeZAXdb4.2OBps1hpTWY4h52', 'https://noticias-es.laiglesiadejesucristo.org/media/380x285/oaks-bio-resized.jpg', 'Good dude', 'Dallin Harris Oaks es un abogado, jurista, autor, profesor y dirigente religioso estadounidense, quien sirvió como Primer consejero de Russell M. Nelson, 17º presidente de La Iglesia de Jesucristo de los Santos de los Últimos Días.', 9383892),
 (2, 'admin@admin', '$2y$10$3So0IOIc7tpHqZxVIVvQK./m09WroLJs9gi8VKP0aXTDtPkxIbI.6', '/public/img/descarga.jpeg', 'El Admin es', 'Russell Marion Newqewqewlson ', 3441),
-(3, 'nuevo@nuevo', '$2y$10$kSgbWxPk0kSQ6H8z17eFO.VZVuBnTliQUAEZA.S21B4wAL63Biknu', '/public/img/20200527_195706.jpg', 'Edwar Rejas', 'rrr', 0),
-(4, 'nigga@nigga', '$2y$10$TEw9R6jl9IEbkTyXfeb1aOb62EdiGo5OtUPLAy4m/J9kxGizlc.ke', '/public/img/20200527_195706.jpg', '', '', 0),
-(5, 'crear@crear', '$2y$10$xMJXJi3ZFnjswyxLNiF7.ev2hM1/oVrqh9UBBCJIvIgM9PcswZyoS', '', 'Edwar Rejas', '', 0);
+
 
 --
 -- Índices para tablas volcadas
