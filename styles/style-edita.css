@@ -1,0 +1,11 @@
+nav{
+
+    display: flex;
+}
+
+.ctn-seccion-elements{
+
+    display: flex; 
+    gap:1rem;
+     height: 5vh 
+}
